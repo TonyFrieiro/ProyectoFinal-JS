@@ -3,6 +3,13 @@ function Producto (nombre, precio ,){
     this.precio = precio;
 }
 
+let pagarTotal = 0;
+
+function total(precio){
+    (parseFloat(precio))
+    pagarTotal = pagarTotal + precio
+}
+
 const arrayCarrito = [];
 
 const botonTote = document.getElementById("botonTote")
@@ -22,6 +29,8 @@ botonTote.addEventListener("click",()=>{
     añadido()
 
     console.log(arrayCarrito)
+
+    total();
 })
 
 const botonBuzo = document.getElementById("botonBuzo")
@@ -37,6 +46,8 @@ botonBuzo.addEventListener("click",()=>{
     añadido()
 
     console.log(arrayCarrito)
+
+    total();
 })
 
 const botonRemera = document.getElementById("botonRemera")
@@ -52,6 +63,8 @@ botonRemera.addEventListener("click",()=>{
     añadido()
 
     console.log(arrayCarrito)
+
+    total();
 })
 
 const botonCartuchera = document.getElementById("botonCartuchera")
@@ -67,6 +80,8 @@ botonCartuchera.addEventListener("click",()=>{
     añadido()
 
     console.log(arrayCarrito)
+
+    total();
 })
 
 const botonCuadro = document.getElementById("botonCuadro")
@@ -82,5 +97,15 @@ botonCuadro.addEventListener("click",()=>{
     añadido()
 
     console.log(arrayCarrito)
+
+    total();
+
 })
 
+const botonCarrito = document.getElementById("botonCarrito")
+
+botonCarrito.addEventListener("click",()=>{
+    let verTotal = document.getElementById("botonTotal")
+    console.log(verTotal.innerText)
+    verTotal.innerText = "$ "+ pagarTotal+""
+})
