@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Productos</title>
+      <meta name="description" content="Nuestros productos disponibles en este momento"/>
+      <meta name="keywords" content="Bordados, Bolsas, Cuadros, Buzos, disponibilidad"/>
+      <link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link rel="stylesheet" href="./style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Akshar&display=swap" rel="stylesheet">
+  </head>
+  <body class="gridProductos">
+      <header class="productosHeader">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+              <div class="container-fluid">
+                  <nav class="navbar navbar-dark bg-dark">
+                      <div class="container-fluid" id="colorPiel">
+                        <span class="navbar-brand mb-0 h1 letraLogo" id="colorPiel" >Euporie</span>
+                      </div>
+                    </nav>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                  <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/carrito.html">Productos</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Presupuestos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Nosotros</a>
+                    </li>
+                  </ul>
+                  <button class="btn btn-outline-success me-2" type="button">Carrito</button>
+                </div>
+              </div>
+          </nav>
+      </header>
+      <main class="productosMain">
+          <section class="contenedorProductos">
+              <div class="tituloProductos"><h1>PRODUCTOS </h1></div>
+              <div><h2>encargue algun producto: </h2></div>
+              <div id = containerCards class="row row-cols-1 row-cols-md-2">
+                <div class="card col mb-4" style="width: 18rem;" >
+                    <img class="card-img-top" src="/img/totenegra.webp" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Tote bag negra</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary" id="botonTote">Comprar</a>
+                    </div>
+                </div>
+                <div class="card col mb-4" style="width: 18rem;">
+                    <img class="card-img-top" src="/img/buzoBordado.webp" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Buzo bordado</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary" id="botonBuzo">Comprar</a>
+                    </div>
+                </div>
+                <div class="card col mb-4" style="width: 18rem;">
+                    <img class="card-img-top" src="/img/remeraBordada.webp" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Remera bordada</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary" id="botonRemera">Comprar</a>
+                    </div>
+                </div>
+                <div class="card col mb-4" style="width: 18rem;">
+                    <img class="card-img-top" src="/img/cartuchera.webp" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Cartuchera</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary" id="botonCartuchera">Comprar</a>
+                    </div>
+                </div>
+                <div class="card col mb-4" style="width: 18rem;">
+                    <img class="card-img-top" src="/img/cuadroBordado.webp" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Cuadro Bordado</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary" id="botonCuadro">Comprar</a>
+                    </div>
+                </div>
+          </section>
+          <div class="volverArriba">
+              <a href="/carrito.html">Volver arriba</a>
+          </div>
+      </main>
+
+      <footer class="productosFooter">
+          <div class="footer">
+              <div class="contacto">
+                  <h3>Contacto</h3>
+                  <div>
+                      <img src="../img/phone-solid.svg"  alt="logo telefono">
+                      <p>1554778921</p>
+                  </div>
+                  <div>
+                      <img src="../img/envelope-solid.webp"  alt="logo correo">
+                      <p>euporie@gmail.com.ar</p>
+                  </div>
+                  <div>   
+                      <a href="https://www.instagram.com/euporie_/?hl=es"><img src= "../img/instagram-brands.webp" alt="logo instagram"></a>
+                  </div>
+                  <div>
+                      <a href="https://twitter.com/Euporie_t?t=DOiOgR9eUUqW3c6rZVpoJw&s=08"><img src="../img/twitter-brands.webp"  alt="logo twitter"></a>
+                  </div>
+              </div>
+                  
+              <div class="footerProductos">
+                  <h3>Productos</h3>
+                  <div><a href="#">Bolsas</a></div>
+                  <div><a href="#">Bordados</a></div>
+                  <div><a href="#">Cuadros</a></div>
+                  <div><a href="#">Remeras</a></div>
+                  <div><a href="#">Buzos</a></div>
+              </div>
+              <div class="iframe">
+                  <h2>Donde estamos</h2>
+                  <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1642.8064199393968!2d-58.49714334195874!3d-34.56335678631874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x86728fb4dcbe1adf!2zMzTCsDMzJzQ4LjEiUyA1OMKwMjknNDUuOCJX!5e0!3m2!1ses-419!2sar!4v1652710420657!5m2!1ses-419!2sar" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+              </div>
+          </div>
+          <div class="contenedorPago">
+              <div class="tituloPago">
+                  <h2>Medios de pago</h2>
+              </div>  
+              <div class="mediosPago">
+                  <div><img src="../img/visa.webp" alt="logo visa"></div>
+                  <div><img src="../img/mastercard.webp" alt="logo mastercard"></div>
+                  <div><img src="../img/american.webp" alt="logo american express"></div>
+              </div>
+          </div>
+          <div class="boxCopyright">
+              <hr>
+              <p>Todos los derechos reservados © 2022 <b>Euporie</b></p>
+          </div>
+      </footer>        
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+          AOS.init();
+      </script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
