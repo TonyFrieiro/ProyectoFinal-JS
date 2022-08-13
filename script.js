@@ -79,8 +79,11 @@ let acumulador = 0;
 const botonTote = document.getElementById("botonTote")
 
 function añadido(){
+    nombre1 = Object.keys(arrayCarrito)
+    console.log(nombre1)
+    nombre2 = localStorage.getItem(nombre1)
     Toastify({
-        text: "Producto añadido",
+        text: "Producto "+nombre2+ " añadido",
         duration: 3000,
         newWindow: false,
         close: true,
@@ -104,7 +107,7 @@ botonTote.addEventListener("click",()=>{
 
     arrayCarrito.push(producto1)
 
-    añadido()
+    añadido(producto1)
 
     console.log(arrayCarrito)
 
@@ -225,7 +228,7 @@ botonCarrito.addEventListener("click",()=>{
     acumulador = 0
     total2()
     Toastify({
-        text: "Cariito vaciado",
+        text: "Carrito vaciado",
         duration: 3000,
         newWindow: false,
         close: true,
