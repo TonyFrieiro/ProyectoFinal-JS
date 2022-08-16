@@ -213,6 +213,15 @@ class Producto{
     }
 }
 
+let precioTotal = 0
+
+const desestructurar = (item) =>{                 //desestructuracion en parametros
+    const {precio} = item
+    precioTotal= precioTotal + precio
+    console.log(precio)
+    console.log(precioTotal)
+}
+
 function total2(){
     let verTotal = document.getElementById("botonTotal")
     verTotal.innerText = "$ "+ acumulador+""
@@ -254,18 +263,20 @@ botonTote.addEventListener("click",()=>{
 
     const producto1 = new Producto (nombre, precio);
 
+    desestructurar(producto1)
+
     arrayCarrito.push(producto1)
 
     añadido(producto1)
 
-    console.log(arrayCarrito)
+    console.log(...arrayCarrito)
 
     total2()
 
     //const enJSON = JSON.stringify(producto1);
     //localStorage.setItem(valor, enJSON);
 
-    valor = valor + 1
+    valor++
 
     localStorage.setItem(valor, JSON.stringify(producto1));
 
@@ -280,17 +291,19 @@ botonBuzo.addEventListener("click",()=>{
 
     const producto1 = new Producto (nombre, precio);
 
+    desestructurar(producto1)
+
     arrayCarrito.push(producto1)
 
     añadido()
 
-    console.log(arrayCarrito)
+    console.log(...arrayCarrito)
 
     total2()
 
     //const enJSON = JSON.stringify(producto1);
     //localStorage.setItem(valor, enJSON);
-    valor = valor + 1
+    valor++
 
     localStorage.setItem(valor, JSON.stringify(producto1));
 })
@@ -304,17 +317,19 @@ botonRemera.addEventListener("click",()=>{
 
     const producto1 = new Producto (nombre, precio);
 
+    desestructurar(producto1)
+
     arrayCarrito.push(producto1)
 
     añadido()
 
-    console.log(arrayCarrito)
+    console.log(...arrayCarrito)
 
     total2()
 
     //const enJSON = JSON.stringify(producto1);
     //localStorage.setItem(valor, enJSON);
-    valor = valor + 1
+    valor++
 
     localStorage.setItem(valor, JSON.stringify(producto1));
 })
@@ -328,17 +343,19 @@ botonCartuchera.addEventListener("click",()=>{
 
     const producto1 = new Producto (nombre, precio);
 
+    desestructurar(producto1)
+
     arrayCarrito.push(producto1)
 
     añadido()
 
-    console.log(arrayCarrito)
+    console.log(...arrayCarrito)
 
     total2()
 
     //const enJSON = JSON.stringify(producto1);
     //localStorage.setItem(valor, enJSON);
-    valor = valor + 1
+    valor++
 
     localStorage.setItem(valor, JSON.stringify(producto1));
 })
@@ -352,17 +369,19 @@ botonCuadro.addEventListener("click",()=>{
 
     const producto1 = new Producto (nombre, precio);
 
+    desestructurar(producto1)
+
     arrayCarrito.push(producto1)
 
     añadido()
 
-    console.log(arrayCarrito)
+    console.log(...arrayCarrito)
 
     total2()
 
     //const enJSON = JSON.stringify(producto1);
     //localStorage.setItem(valor, enJSON);
-    valor = valor + 1
+    valor++
 
     localStorage.setItem(valor, JSON.stringify(producto1));
 })
