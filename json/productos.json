@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "ToteNegra",
+        "precio": 2000,
+        "stock": 10,
+        "img": "totenegra.webp"
+    },
+    {
+        "id": 2,
+        "nombre": "Buzo bordado",
+        "precio": 4500,
+        "stock": 7,
+        "img": "buzoBordado.webp"
+    },
+    {
+        "id": 3,
+        "nombre": "Remera bordada",
+        "precio": 2000,
+        "stock": 20,
+        "img": "remeraBordada.webp"
+    }
+]

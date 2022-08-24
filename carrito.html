@@ -46,12 +46,15 @@
                     </li>
                   </ul>
                   <button class="btn btn-outline-success me-2" type="button" id="botonTotal">$</button>
-                  <button class="btn btn-outline-success me-2" type="button" id="botonCarrito">Borrar Local storage</button>
+                  <button class="btn btn-outline-success me-2" type="button" id="botonCarrito">Vaciar carrito</button>
                 </div>
               </div>
           </nav>
       </header>
-      <main id="contenedorArray" class="card-deck">
+      <div id = "divProductos" class="row">
+
+      </div>
+      <!-- <main id="contenedorArray" class="card-deck">
           <section class="contenedorProductos">
               <div class="tituloProductos"><h1>PRODUCTOS </h1></div>
               <div><h2>encargue algun producto: </h2></div>
@@ -61,7 +64,8 @@
                     <div class="card-body">
                       <h5 class="card-title">Tote bag negra</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary" id="botonTote">Comprar</a>
+                      <p class="card-price"> 2000 </p>
+                      <a href="#" class="agregarBoton btn btn-primary" id="botonTote">Comprar</a>
                     </div>
                 </div>
                 <div class="card col mb-4" style="width: 18rem;">
@@ -69,7 +73,8 @@
                     <div class="card-body">
                       <h5 class="card-title">Buzo bordado</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary" id="botonBuzo">Comprar</a>
+                      <p class="card-price"> 4000 </p>
+                      <a href="#" class="agregarBoton btn btn-primary" id="botonBuzo">Comprar</a>
                     </div>
                 </div>
                 <div class="card col mb-4" style="width: 18rem;">
@@ -77,7 +82,8 @@
                     <div class="card-body">
                       <h5 class="card-title">Remera bordada</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary" id="botonRemera">Comprar</a>
+                      <p class="card-price"> 2200 </p>
+                      <a href="#" class="agregarBoton btn btn-primary" id="botonRemera">Comprar</a>
                     </div>
                 </div>
                 <div class="card col mb-4" style="width: 18rem;">
@@ -85,7 +91,8 @@
                     <div class="card-body">
                       <h5 class="card-title">Cartuchera</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary" id="botonCartuchera">Comprar</a>
+                      <p class="card-price"> 2500 </p>
+                      <a href="#" class="agregarBoton btn btn-primary" id="botonCartuchera">Comprar</a>
                     </div>
                 </div>
                 <div class="card col mb-4" style="width: 18rem;">
@@ -93,13 +100,31 @@
                     <div class="card-body">
                       <h5 class="card-title">Cuadro Bordado</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary" id="botonCuadro">Comprar</a>
+                      <p class="card-price"> 1700 </p>
+                      <a href="#" class="agregarBoton btn btn-primary" id="botonCuadro">Comprar</a>
                     </div>
                 </div>
           </section>
+          <div class="contenedorCarrito">
+            <div class="row">
+                <main id="items" class="col-sm-8 row"></main>
+                <aside class="col-sm-4">
+                    <h2>Carrito</h2>
+                    <ul id="carrito" class="list-group">
+                    </ul>
+                    <hr>
+                    <div id="total"></div>
+                    <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                    <button id="boton-terminar" class="btn">Comprar</button>
+                </aside>
+            </div>
+        </div>
+        <div id="fetch"> -->
+          
+        <!-- </div>
           <div class="volverArriba">
               <a href="/carrito.html">Volver arriba</a>
-          </div>
+          </div> -->
       </main> 
       <footer class="productosFooter">
           <div class="footer">
