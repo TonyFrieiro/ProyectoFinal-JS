@@ -46,13 +46,25 @@
                     </li>
                   </ul>
                   <button class="btn btn-outline-success me-2" type="button" id="botonTotal">$</button>
-                  <button class="btn btn-outline-success me-2" type="button" id="botonCarrito">Vaciar carrito</button>
+                  <button class="btn btn-outline-success me-2" type="button" id="botonCarrito">Mostrar carrito</button>
                 </div>
               </div>
           </nav>
       </header>
       <div id = "divProductos" class="row">
 
+      </div>
+      <div id = "carrito" class="row noMostrar">
+        <div>
+          <button id="ocultar" class="btn btn-danger">Ocultar carrito</button>
+          <h2>CARRITO</h2>
+          <ul id="carrito2" class="list-group">
+          </ul>
+          <hr>
+          <div id="total"></div>
+          <button id="boton-vaciar" class="btn btn-danger">Vaciar carrito</button>
+          <button id="boton-terminar" class="btn">Comprar</button><p> </p>
+        </div>
       </div>
       <!-- <main id="contenedorArray" class="card-deck">
           <section class="contenedorProductos">
@@ -182,6 +194,7 @@
           AOS.init();
       </script>
 
-    <script src="./script.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
+<script src="./script.js"></script>
   </body>
 </html>

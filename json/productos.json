@@ -19,5 +19,19 @@
         "precio": 2000,
         "stock": 20,
         "img": "remeraBordada.webp"
+    },
+    {
+        "id": 4,
+        "nombre": "Cartuchera",
+        "precio": 1400,
+        "stock": 8,
+        "img": "cartuchera.webp"
+    },
+    {
+        "id": 5,
+        "nombre": "Cuadro bordado",
+        "precio": 3700,
+        "stock": 2,
+        "img": "cuadroBordado.webp"
     }
 ]

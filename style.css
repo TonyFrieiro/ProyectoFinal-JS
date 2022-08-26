@@ -214,7 +214,7 @@
   /*---------------------------------------------------------------------------------------------------------*/
 
   .card{
-    margin: 20px;
+    margin: 40px !important;
   }
 
   .card-img-top {
@@ -222,5 +222,57 @@
     width: 100%;
     height: 15vw;
     /*object-fit: cover;*/
+
+
 }
+
+#carrito h2{
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+#carrito ul{
+  padding: 20px;
   
+}
+
+.noMostrar{
+  visibility: hidden;
+}
+
+.mostrar{
+  visibility: visible;
+}
+
+#carrito{
+  background-color: #ffd5b7;
+  border: 3px solid #000;
+  display: inline-block
+}
+
+#boton-terminar{
+  background-color: black;
+  color: white;
+}
+
+#boton-terminar:hover{
+  background-color:green ;
+  transition: 200ms;
+}
+
+
+#carrito button{
+  margin: 20px;
+}
+
+#boton-vaciar{
+  background-color: #932811;
+}
+
+#ocultar{
+  background-color: #932811;
+}
+
+button:hover{
+  border: 3px solid #000;}

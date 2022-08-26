@@ -393,7 +393,16 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+let restar = 0
+
 let acumulador = 0
+
+let verTotalCarrito = document.getElementById("total")
+
+const carritoLista = document.getElementById("carrito2")
+
+const vaciarCarrito = document.getElementById("boton-vaciar")
+
 localStorage.setItem("acumuladorKey", acumulador)
 
 function total2(){
@@ -426,8 +435,8 @@ fetch("./json/productos.json")
             <img class="card-img-top" src="./img/${producto.img}" alt="imagen del producto">
             <div class="card-body">
                 <h5 class="card-title">${producto.nombre}</h5>
-                <p class="card-text">${producto.precio} </p>
-                <p id= "stock" class="card-text">${producto.stock} </p>
+                <p class="card-text">$ ${producto.precio} </p>
+                <p id= "stock" class="card-text">stock: ${producto.stock} </p>
                 <button class= "btn btn-primary">Agregar al carrito</button>
             </div>
         </div>
@@ -439,10 +448,13 @@ fetch("./json/productos.json")
         cardProducto.children[1].children[3].addEventListener('click', () =>{
             if(carrito.find(prod => prod.id == producto.id)){
                 let index = carrito.findIndex((prod => prod.id == producto.id))
+                
                 if(carrito[index].cantidad < producto.stock){
                     carrito[index].cantidad++
                     acumulador = acumulador + producto.precio
                     total2()
+
+                    agregar(producto.nombre,producto.precio,producto.img)
 
                     Toastify({
                         text: "Producto "+producto.nombre+ " añadido",
@@ -478,6 +490,9 @@ fetch("./json/productos.json")
                 carrito.push(prodCarrito)
                 acumulador = acumulador + producto.precio
                 total2()
+
+                agregar(producto.nombre,producto.precio,producto.img)
+
                 Toastify({
                     text: "Producto "+producto.nombre+ " añadido",
                     duration: 3000,
@@ -493,18 +508,32 @@ fetch("./json/productos.json")
                     onClick: function(){} // Callback after click
                     }).showToast();
             }
+            
             localStorage.setItem("carrito",JSON.stringify(carrito))
+
+            let aprender = JSON.parse(localStorage.getItem('carrito'))
+            
+            // const nuevo =aprender.find(apr => apr.id == producto.id)
+            // console.log(nuevo.id)
+            // carritoLista.innerHTML +=
+            // `<li>id= ${nuevo.id}cantidad: ${nuevo.cantidad} Precio: $ <img src="./img/" width= 40px height= 40px alt="imagen del producto"></li>`
+
+
+            
+
         })
+        
     })
 
 
 })
-
 //agregar async despues de la coma
-botonCarrito.addEventListener('click', ()=>{
+vaciarCarrito.addEventListener('click', ()=>{
     
     localStorage.clear()
     acumulador = 0
+    carritoLista.innerHTML = ""
+    verTotalCarrito.innerText = "TOTAL:   $ 0 "
     total2()
     Toastify({
         text: "Carrito vaciado",
@@ -525,9 +554,6 @@ botonCarrito.addEventListener('click', ()=>{
     
     
     
-    
-    
-    
     // const prodCarrito = JSON.parse(localStorage.getItem("carrito"))
 
     // if(prodCarrito.length == 0){
@@ -541,7 +567,54 @@ botonCarrito.addEventListener('click', ()=>{
     // }
 })
 
+// function cambio(){
+//     productos.forEach((producto,indice)=>{
+//         const cambiarStock = document.getElementById("stock")
+
+//         cambiarStock.innerHTML = `Stock : ${stockCambiante}`
+//     })
+// }
+// cambio()
+
+domCarrito = document.getElementById("carrito")
+ 
+const prodCarrito = JSON.parse(localStorage.getItem("carrito"))
 
 
 
+async function agregar(nombreCarrito,precioCarrito,imgCarrito){
+    const domCarrito = document.getElementById("carrito")
+    //const carritoLista = document.getElementById("carrito2")
+    carritoLista.innerHTML +=
+        `<li>${nombreCarrito} Precio: $ ${precioCarrito} <img src="./img/${imgCarrito}" width= 40px height= 40px alt="imagen del producto"></li>`
 
+    //let verTotalCarrito = document.getElementById("total")
+    localStorage.setItem("acumuladorKey", acumulador)
+    let acumulador2 = localStorage.getItem("acumuladorKey");
+    verTotalCarrito.innerText = "TOTAL:   $ "+ acumulador2+""
+    console.log("total: "+acumulador2)
+
+    //const vaciarCarrito = document.getElementById("boton-vaciar")
+    vaciarCarrito.addEventListener('click', ()=>{
+
+    })
+}
+const mostrarTabla = document.getElementById("carrito")
+
+botonCarrito.addEventListener('click', ()=>{
+    console.log("lo tocste")
+
+    
+    mostrarTabla.className = ".mostrar"
+
+})
+
+const botonOcultar = document.getElementById("ocultar")
+
+botonOcultar.addEventListener('click', ()=>{
+    console.log("lo tocste")
+
+    mostrarTabla.remove("mostrar")
+    mostrarTabla.className = ".noMostrar"
+
+})
