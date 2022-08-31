@@ -4,7 +4,7 @@
         "nombre": "ToteNegra",
         "precio": 2000,
         "stock": 10,
-        "img": "totenegra.webp"
+        "img": "totenegra.png"
     },
     {
         "id": 2,
@@ -25,13 +25,20 @@
         "nombre": "Cartuchera",
         "precio": 1400,
         "stock": 8,
-        "img": "cartuchera.webp"
+        "img": "cartuchera.png"
     },
     {
         "id": 5,
-        "nombre": "Cuadro bordado",
+        "nombre": "Tote Tick Tick Boom",
         "precio": 3700,
         "stock": 2,
-        "img": "cuadroBordado.webp"
+        "img": "toteTickTickBoom.png"
+    },
+    {
+        "id": 6,
+        "nombre": "ToteBlanca",
+        "precio": 2000,
+        "stock": 5,
+        "img": "toteblanca.webp"
     }
 ]

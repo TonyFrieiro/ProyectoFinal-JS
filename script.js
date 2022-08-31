@@ -432,11 +432,11 @@ fetch("./json/productos.json")
     productos.forEach((producto, indice)=>{
         divProductos.innerHTML += `
         <div class="card" id= "producto${indice}" style="width: 18rem;margin: 6px;">
-            <img class="card-img-top" src="./img/${producto.img}" alt="imagen del producto">
+            <img id= "img${producto.id}" class="card-img-top" src="./img/${producto.img}" alt="imagen del producto">
             <div class="card-body">
                 <h5 class="card-title">${producto.nombre}</h5>
                 <p class="card-text">$ ${producto.precio} </p>
-                <p id= "stock" class="card-text">stock: ${producto.stock} </p>
+                <p id= "stock${producto.id}" class="card-text">stock: ${producto.stock} </p>
                 <button class= "btn btn-primary">Agregar al carrito</button>
             </div>
         </div>
@@ -470,6 +470,8 @@ fetch("./json/productos.json")
                         },
                         onClick: function(){} // Callback after click
                         }).showToast();
+
+                        menosStock(producto.stock,producto.id,producto.img)
                 } else{
                     Toastify({
                         text: "No hay mas stock del producto",
@@ -507,6 +509,8 @@ fetch("./json/productos.json")
                     },
                     onClick: function(){} // Callback after click
                     }).showToast();
+                
+                menosStock(producto.stock,producto.id)
             }
             
             localStorage.setItem("carrito",JSON.stringify(carrito))
@@ -548,6 +552,7 @@ vaciarCarrito.addEventListener('click', ()=>{
         },
         onClick: function(){} // Callback after click
     }).showToast();
+    location.reload();
     //let verTotal = document.getElementById("botonTotal")
     //verTotal.innerText = "$ "+ acumulador+""
     //console.log("total: "+acumulador)
@@ -582,10 +587,13 @@ const prodCarrito = JSON.parse(localStorage.getItem("carrito"))
 
 
 
+
+
 async function agregar(nombreCarrito,precioCarrito,imgCarrito){
     const domCarrito = document.getElementById("carrito")
     //const carritoLista = document.getElementById("carrito2")
     carritoLista.innerHTML +=
+        //<button id="borrarDelCarrito"  class="btn btn-danger btn-sm borrar">borrar  ${nombreCarrito}</button>//
         `<li>${nombreCarrito} Precio: $ ${precioCarrito} <img src="./img/${imgCarrito}" width= 40px height= 40px alt="imagen del producto"></li>`
 
     //let verTotalCarrito = document.getElementById("total")
@@ -597,6 +605,14 @@ async function agregar(nombreCarrito,precioCarrito,imgCarrito){
     //const vaciarCarrito = document.getElementById("boton-vaciar")
     vaciarCarrito.addEventListener('click', ()=>{
 
+    })
+
+    //BORRAR PRODUCTO DEL CARRITO
+
+    const botonBorrarCarrito = document.getElementsByClassName("borrar")
+
+    botonBorrarCarrito.addEventListener('click',()=>{
+        console.log(botonBorrarCarrito)
     })
 }
 const mostrarTabla = document.getElementById("carrito")
@@ -618,3 +634,55 @@ botonOcultar.addEventListener('click', ()=>{
     mostrarTabla.className = ".noMostrar"
 
 })
+
+
+//BOTON TERMINAR COMPRA
+
+const botonTerminar = document.getElementById("boton-terminar")
+
+botonTerminar.addEventListener('click', ()=>{
+    Swal.fire({
+        title: 'Esta seguro de terminar la compra?',
+        text: `Total: $  ${acumulador}`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, comprar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Compra terminada',
+                'Su compra a sido realizada exitosamente',
+                'success'
+            )
+            localStorage.clear()
+            acumulador = 0
+            carritoLista.innerHTML = ""
+            verTotalCarrito.innerText = "TOTAL:   $ 0 "
+            total2()
+            setTimeout(function(){
+                location.reload();
+            }, 2000);
+            
+        }
+    })
+    
+    
+
+})
+let contador =0
+
+
+//CAMBIAR EL STOCK EN EL DOM
+//solo pude hacerlo identificando cada uno
+//averiguar como hacerlo para todos en general
+
+async function menosStock(stockNuevo,idStock,imgNuevo){
+    if (idStock == 1){contador = contador + 1
+        stockNuevo = stockNuevo - contador
+        console.log(stockNuevo)
+        const tote = document.getElementById("stock1")
+        tote.innerHTML = `<p id= "stock${idStock}" class="card-text">stock: ${stockNuevo} </p>`
+    } 
+}
