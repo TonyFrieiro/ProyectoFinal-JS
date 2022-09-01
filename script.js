@@ -672,6 +672,11 @@ botonTerminar.addEventListener('click', ()=>{
 
 })
 let contador =0
+let contador2 =0
+let contador3 =0
+let contador4 =0
+let contador5 =0
+let contador6 =0
 
 
 //CAMBIAR EL STOCK EN EL DOM
@@ -679,10 +684,51 @@ let contador =0
 //averiguar como hacerlo para todos en general
 
 async function menosStock(stockNuevo,idStock,imgNuevo){
-    if (idStock == 1){contador = contador + 1
-        stockNuevo = stockNuevo - contador
-        console.log(stockNuevo)
-        const tote = document.getElementById("stock1")
-        tote.innerHTML = `<p id= "stock${idStock}" class="card-text">stock: ${stockNuevo} </p>`
-    } 
+    
+    switch (idStock) {
+        case 1:
+            contador = contador + 1
+            stockNuevo = stockNuevo - contador
+            console.log(stockNuevo)
+            const toteN = document.getElementById("stock1")
+            toteN.innerHTML = `<p id= "stock${idStock}" class="card-text">stock: ${stockNuevo} </p>`
+            break;
+        case 2:
+            contador2 = contador2 + 1
+            stockNuevo = stockNuevo - contador2
+            console.log(stockNuevo)
+            const buzoB = document.getElementById("stock2")
+            buzoB.innerHTML = `<p id= "stock${idStock}" class="card-text">stock: ${stockNuevo} </p>`
+            break;
+        case 3:
+            contador3 = contador3 + 1
+            stockNuevo = stockNuevo - contador3
+            console.log(stockNuevo)
+            const remeraB = document.getElementById("stock3")
+            remeraB.innerHTML = `<p id= "stock${idStock}" class="card-text">stock: ${stockNuevo} </p>`
+            break;
+        case 4:
+            contador4 = contador4 + 1
+            stockNuevo = stockNuevo - contador4
+            console.log(stockNuevo)
+            const cartu = document.getElementById("stock4")
+            cartu.innerHTML = `<p id= "stock${idStock}" class="card-text">stock: ${stockNuevo} </p>`
+            break;
+        case 5:
+            contador5 = contador5 + 1
+            stockNuevo = stockNuevo - contador5
+            console.log(stockNuevo)
+            const toteTick = document.getElementById("stock5")
+            toteTick.innerHTML = `<p id= "stock${idStock}" class="card-text">stock: ${stockNuevo} </p>`
+            break;
+        case 6:
+            contador6 = contador6 + 1
+            stockNuevo = stockNuevo - contador6
+            console.log(stockNuevo)
+            const toteB = document.getElementById("stock6")
+            toteB.innerHTML = `<p id= "stock${idStock}" class="card-text">stock: ${stockNuevo} </p>`
+            break;
+        default:
+            break;
+    }
 }
